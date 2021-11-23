@@ -4,10 +4,17 @@ import br.com.alura.forum.modelo.Curso;
 import br.com.alura.forum.modelo.Topico;
 import br.com.alura.forum.repository.CursoRepository;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class TopicoForm {
 
+    @NotNull @NotEmpty @Size(min = 5, max = 30)
     private String titulo;
+    @NotNull @NotEmpty @Size(min = 10, max = 144)
     private String mensagem;
+    @NotNull @NotEmpty @Size(min = 5, max = 30)
     private String nomeCurso;
 
     public String getTitulo() {
@@ -26,11 +33,11 @@ public class TopicoForm {
         this.mensagem = mensagem;
     }
 
-    public String getNomeCruso() {
+    public String getNomeCurso() {
         return nomeCurso;
     }
 
-    public void setNomeCruso(String nomeCruso) {
+    public void setNomeCurso(String nomeCruso) {
         this.nomeCurso = nomeCruso;
     }
 
